@@ -1,0 +1,67 @@
+### Aliases
+alias ..='cd ..'
+alias md='mkdir'
+alias c='clear'
+alias ls.='ls -lart'
+alias la='ls -dl .*'
+alias attach='tmux attach -t'
+alias session='tmux new-session -s'
+
+alias startsqlserver='sudo /usr/local/mysql/support-files/mysql.server start'
+alias stopsqlserver='sudo /usr/local/mysql/support-files/mysql.server stop'
+alias restartsqlserver='sudo /usr/local/mysql/support-files/mysql.server restart'
+
+alias act='conda activate'
+alias dact='conda deactivate'
+
+### Colors
+red=$(tput setaf 88);
+brightRed=$(tput setaf 88);
+grey=$(tput setaf 245);
+green=$(tput setaf 67);
+white=$(tput setaf 15);
+yellowish=$(tput setaf 144);
+test=$(tput setaf 94);
+blueish=$(tput setaf 32);
+inputColor=$(tput setaf 247);
+
+export red
+export brightRed
+export grey
+export green
+export white
+export yellowish
+export inputColor
+
+userName=$(whoami)
+
+if [ $userName="mandeepsingh" ]; then
+    PS1="\${yellowish}«\${red}sudoMode${yellowish}»"
+else
+    PS1="\$(test)\$(userName)"
+fi
+PS1+="\${grey} ✠ ";
+PS1+="\${blueish}\w";
+PS1+="\${test} \$(parse_git_branch)";
+PS1+="\${white}:"
+PS1+="\n";
+PS1+="\${brightRed}$ \${inputColor}";
+PS1+="";
+parse_git_branch() {
+  git branch 2> /dev/null | grep '^*' | grep -wo '\w\+';
+}
+
+EDITOR=vim;
+export PS1;
+export EDTIOR;
+
+
+mdcd () {
+    mkdir -p "$*"
+    cd "$*"
+}
+
+export PATH=$PATH:/Users/mandeepsingh/Dev/Tools/AppDev/flutter/bin/
+export PATH=$PATH:/Users/mandeepsingh/Dev/Tools/ADB
+
+

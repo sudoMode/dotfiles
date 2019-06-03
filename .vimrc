@@ -1,4 +1,4 @@
-" My shortcuts:
+" Shortcuts:
 " ,+r     => Reload vimrc
 " ,+sc    => Toggle spellcheck
 " ,+<Tab> => Open new tab
@@ -99,6 +99,9 @@ set statusline+=\C:
 set statusline+=\%c
 " set statusline+=\ [%b][0x%B]           " Get ASCII & Byte Code for char under cursor
 
+" *************** Browsing ************************************** "
+let g:netrw_browse_split=3
+
 " **************************************************************** "
 
 " ************************ Key Bindings ************************** "
@@ -144,6 +147,10 @@ nmap <C-r> <Nop>
 nmap <silent> < :u<CR>
 nmap <silent> > :red<CR>
 
+" :w & :W means the same thing
+cnoremap W w
+cnoremap Q q
+
 " Chilled out navigation
 noremap h <BS>
 noremap l <Space>
@@ -153,6 +160,12 @@ noremap <C-l> $
 " Easy indent
 vnoremap > >gv
 vnoremap < <gv
+
+" Resize panes
+nmap <leader>b :execute "res +5"<CR>
+nmap <leader>n :execute "res -5"<CR>
+nmap <leader>v :execute "vertical res -10"<CR>
+nmap <leader>m :execute "vertical res +10"<CR>
 
 " ******************************************* "
 
@@ -206,10 +219,11 @@ let &t_EI="\033[1 q"
 
 " Create tag file
 command! Tags !ctags -R .
+command! SpecialKeys digraphs
 
 " Source plugin initializer
 source ~/.vim/plugins/.init.vim
 " ******************************************* "
 
 " set rulerformat=%15(%c%V\ %p%%%)
-" call matchadd('colorcolumn', '\%91v')
+" call matchadd('colorcolumn', '\%91v)
