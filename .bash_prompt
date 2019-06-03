@@ -63,5 +63,3 @@ mdcd () {
 
 export PATH=$PATH:/Users/mandeepsingh/Dev/Tools/AppDev/flutter/bin/
 export PATH=$PATH:/Users/mandeepsingh/Dev/Tools/ADB
-
-
