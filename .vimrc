@@ -224,6 +224,3 @@ command! SpecialKeys digraphs
 " Source plugin initializer
 source ~/.vim/plugins/.init.vim
 " ******************************************* "
-
-" set rulerformat=%15(%c%V\ %p%%%)
-" call matchadd('colorcolumn', '\%91v)
