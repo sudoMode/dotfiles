@@ -9,7 +9,7 @@
 let b:supported_files = {'python':'#', 'sh':'#', 'tmux':'#', 'rb':'#', 'java':'//', 'js':'//', 'vim':'"'}
 
 for k in keys(b:supported_files)
-   "  if &filetype == k
+    if &filetype == k
         let b:comment_char = b:supported_files[k]
         break
     endif
