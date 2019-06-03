@@ -154,5 +154,4 @@ function! Uncomment(var)
 
 endfunction
 
-
 nmap <silent> <leader>/ :<C-u>call Main()<CR>

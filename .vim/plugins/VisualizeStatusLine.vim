@@ -3,6 +3,7 @@
 " Default status line
 hi statusline ctermfg=65 ctermbg=15
 hi StatusLineNC ctermfg=235 ctermbg=14
+
 " Custom Configs
 function! VisualizeStatusLine(mode)
     if a:mode == 'i'

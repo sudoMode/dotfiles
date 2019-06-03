@@ -1,4 +1,5 @@
 " Trim trailing white spaces
+
 " function! TrimTrailingWhiteSpaces()
 "     execute "normal! m1"
 "     %s/\s\+$//ge
