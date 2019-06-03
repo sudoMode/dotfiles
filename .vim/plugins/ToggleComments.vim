@@ -1,18 +1,15 @@
 " *************************************       A Comment Toggle Utility      ***************************************
-" Author : Mandeep Singh                                                                                          *
-" Created On : Sep 25th, 2018                                                                                     *
 " Key Bindings : ,+/                                                                                              *
 " Supported Languages : Python, VimScript                                                                         *
 " Functionalities : Single line comment/uncomment by default.                                                     *
 "                   Prepend a number before the command to comment/uncomment set of lines                         *
 "                   in downwards direction.                                                                       *
-" Last Modified : Oct 07th, 2018                                                                                  *
 " *****************************************************************************************************************
 
 let b:supported_files = {'python':'#', 'sh':'#', 'tmux':'#', 'rb':'#', 'java':'//', 'js':'//', 'vim':'"'}
 
 for k in keys(b:supported_files)
-    if &filetype == k
+   "  if &filetype == k
         let b:comment_char = b:supported_files[k]
         break
     endif
