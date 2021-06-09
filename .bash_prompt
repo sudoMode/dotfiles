@@ -2,6 +2,7 @@
 alias ..='cd ..'
 alias md='mkdir'
 alias c='clear'
+alias ll='ls -l'
 alias ls.='ls -lart'
 alias la='ls -dl .*'
 alias attach='tmux attach -t'
@@ -11,8 +12,9 @@ alias startsqlserver='sudo /usr/local/mysql/support-files/mysql.server start'
 alias stopsqlserver='sudo /usr/local/mysql/support-files/mysql.server stop'
 alias restartsqlserver='sudo /usr/local/mysql/support-files/mysql.server restart'
 
-alias act='conda activate'
-alias dact='conda deactivate'
+# activate python envrionments
+alias activate='f(){ source ~/Users/mandeepsingh/dev/environments/"$@"/bin/activate 2> /dev/null; unset -f f; }; f'
+
 
 ### Colors
 red=$(tput setaf 88);
