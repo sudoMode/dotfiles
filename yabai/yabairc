@@ -1,0 +1,98 @@
+#!/usr/bin/env sh
+
+# necessary to load scripting-addition during startup on macOS Big Sur
+# *yabai --load-sa* is configured to run through sudo without a password
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# --------- Global Settings ---------
+# padding for an external bar -- top & bottom
+yabai -m config external_bar                 all:20:50
+
+# hover to shift focus
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          autoraise
+
+# open new windows to right/bottom
+yabai -m config window_placement             second_child
+
+# keep floating windows on top
+yabai -m config window_topmost               off
+
+# window shadow only for floating windows
+yabai -m config window_shadow                float
+
+# inactive windows to be slightly transparent
+yabai -m config window_opacity               on
+yabai -m config active_window_opacity        1.0
+yabai -m config normal_window_opacity        0.9
+yabai -m config window_opacity_duration      500
+
+# window borders
+# yabai -m config window_border                on
+# yabai -m config window_border_width          5
+# yabai -m config active_window_border_color   0xff3d090d
+# yabai -m config normal_window_border_color   0xff3d3839
+# yabai -m config insert_feedback_color        0xaa7c9971
+
+# window balancing
+# automatically allocate equal space
+yabai -m config auto_balance                 off
+
+# allocate a little extra space to the main window
+yabai -m config split_ratio                  .6
+
+# find out how these are to be used
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+
+# general space settings
+yabai -m config layout                       bsp
+yabai -m config top_padding                  25
+yabai -m config bottom_padding               25
+yabai -m config left_padding                 25
+yabai -m config right_padding                25
+yabai -m config window_gap                   25
+
+# mission-control desktop labels
+# yabai -m space 1 --label code
+# yabai -m space 2 --label mail
+# yabai -m space 3 --label web
+# yabai -m space 4 --label notes
+# yabai -m space 5 --label re
+# yabai -m space 6 --label media
+# yabai -m space 7 --label social
+# yabai -m space 8 --label games
+
+# space specific settings
+yabai -m config --space 1  layout            float
+# yabai -m config --space games layout        float
+
+# app specific rules
+# don't manage these apps
+yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Numi$" sticky=off layer=above manage=off
+yabai -m rule --add app="^Preview$" sticky=off layer=above manage=off
+yabai -m rule --add app="System Preferences" sticky=off layer=normal manage=off
+yabai -m rule --add app="^Spectacle$" manage=off
+
+# yabai -m rule --add app="^Mail$" space=mail
+# yabai -m rule --add app="^Safari$" space=web
+# yabai -m rule --add app="^Notes$" space=notes
+# yabai -m rule --add app="^ida64$" space=re
+# yabai -m rule --add app="^Transmission$" space=media
+# yabai -m rule --add app="^Spotify$" space=media
+# yabai -m rule --add app="^Discord$" space=social grid=1:1:0:0:1:1 manage=off
+# yabai -m rule --add app="^Steam$" space=games manage=off
+
+# signals
+# yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"
+# yabai -m signal --add event=window_destroyed action="echo \"destroyed window with id \$YABAI_WINDOW_ID\""
+# yabai -m signal --add event=space_changed action="echo \"changed space \$YABAI_RECENT_SPACE_ID -> \$YABAI_SPACE_ID\""
+# yabai -m signal --add event=space_changed action="yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id)"
+
+# echo "yabai configuration loaded..."
+
+
+# transparency, window nav

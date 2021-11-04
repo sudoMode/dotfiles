@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/mandeepsingh/roughWork'
+let g:netrw_dirhist_2='/Users/mandeepsingh/.p2'
+let g:netrw_dirhist_3='/Users/mandeepsingh/.idlerc'
+let g:netrw_dirhist_4='/Users/mandeepsingh/.eclipse'
+let g:netrw_dirhist_5='/Users/mandeepsingh/Dev/iOS/test_app/lib'

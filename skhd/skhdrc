@@ -1,0 +1,26 @@
+# launch apps
+# chrome -- [option + c]
+alt - 0x08 : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+
+# alacritty -- [option + .]
+alt - 0x2F : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# vs code -- [option + ,]
+alt - 0x2B : /Applications/Visual\ Studio\ Code.app/Contents/MacOS/Electron
+
+# pycharm -- [option + /]
+alt - 0x2C : /Applications/PyCharm\ CE.app/Contents/MacOS/pycharm
+
+
+# yabai command
+# restart service -- [option + y]
+alt - 0x10 : brew services restart yassinebridi/formulae/yabai >> /dev/null
+
+
+
+
+# toggle float
+# ctrl + alt - f : yabai -m window --toggle float
+
+# toggle sticky
+# ctrl + alt - s : yabai -m window --toggle topmost;

@@ -1,0 +1,148 @@
+# alacritty config
+
+# window options
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  position:
+    x: 0
+    y: 0
+  padding:
+    x: 10
+    y: 10
+  dynamic_padding: true
+  decorations: none # transparent, buttonless, full, none
+background_opacity: .9
+scrolling:
+  history: 10000
+  multiplier: 3
+
+# font options
+font:
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+  bold:
+    family: Courier New
+    style: Bold
+  italic:
+    family: Courier New
+    style: Italic
+  bold_italic:
+    family: Courier New
+    style: Bold Italic
+  size: 15
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+  draw_bold_text_with_bright_colors: true
+
+# colors -- tomorrow night
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#666666'
+    dim_foreground: '#828482'
+    bright_foreground: '#eaeaea'
+
+# colors -- gruvbox dark
+colors:
+  # Default colors
+  primary:
+    # hard contrast: background = '#1d2021'
+    background: '#000000'
+    # soft contrast: background = '#32302f'
+    foreground: '#ebdbb2'
+
+  # normal colors
+  normal:
+    black:   '#282828'
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+
+  # bright colors
+  bright:
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+  
+  # dim colors
+  dim:
+    black:   '#131415'
+    red:     '#864343'
+    green:   '#777c44'
+    yellow:  '#9e824c'
+    blue:    '#556a7d'
+    magenta: '#75617b'
+    cyan:    '#5b7d78'
+    white:   '#828482'
+
+  # selection properties
+  selection:
+    text: '#c7b3a9'
+    background: '#662a0b'
+    white: '#ffffff'
+
+# cursor colors
+cursor:
+  style:
+    text: CellBackground
+    cursor: CellForeground
+    shape: Block
+    blinking: Always
+    blink_interval: 750
+    unfocused_hollow: true
+    thickness: 0.25
+
+# vim mode cursor colors
+vi_mode_cursor:
+ text: CellBackground
+ cursor: CellForeground
+
+# search colors
+matches:
+ foreground: '#000000'
+ background: '#ffffff'
+focused_match:
+ foreground: '#ffffff'
+ background: '#000000'
+
+bar:
+ background: '#c5c8c6'
+ foreground: '#1d1f21'
+
+# keyboard regex hints
+start:
+ foreground: '#1d1f21'
+ background: '#e9ff5e'
+
+# all characters after the first one in the hint label
+end:
+ foreground: '#e9ff5e'
+ background: '#1d1f21'
+
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  save_to_clipboard: false
+
+live_config_reload: true
+
+# key bindings
+key_bindings:
+  - { key: F,      mods: Command|Shift, action: ToggleFullscreen }
