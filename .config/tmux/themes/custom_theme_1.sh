@@ -64,7 +64,7 @@ music="#[fg=$color_music]#(osascript ~/.config/tmux/themes/songReader.js)#[fg=co
 # kernel="#(system_profiler SPSoftwareDataType | grep -wo "Kernel.*""
 date="#[fg=$color_date]%b %d %H:%M#[fg=colour9] |"
 host="#[fg=$color_host,bold]#h"
-memory="#[fg=green]#(tmux-mem-cpu-load -c -q -g 5 -m 2 -t 0)"
+memory="#[fg=green]#(tmux-mem-cpu-load -c -q -m 2 -a 0)"
 
 set -g status-left $session_name' '
 set -g status-right $music' '$date' '$host' '$memory
