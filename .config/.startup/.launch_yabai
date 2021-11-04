@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+
+brew services stop yassinebridi/formulae/yabai >> /dev/null
+brew services start yassinebridi/formulae/yabai >> /dev/null

@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+
+brew services stop skhd >> /dev/null
