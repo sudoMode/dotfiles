@@ -1,10 +1,7 @@
 # custom aliases
 
 # shell
-alias c="clear"
-alias .="cd"
-alias ..="cd .."
-
+alias c=clear
 
 # python
 alias j="jupyter"
@@ -12,10 +9,6 @@ alias jn="j notebook"
 alias jdark="\
                 jt -t gruvboxd -T -N -kl -vim -f source -fs 11 -nf roboto -nfs 11  -tf 
                 robotosans -tfs 12 -dfs 9 -ofs 9 -cursc b -cursw 3 -cellw 74%"
-
-# vs code
-alias v="code"
-alias v.="v ."
 
 
 

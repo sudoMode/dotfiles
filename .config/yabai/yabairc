@@ -26,10 +26,11 @@ yabai -m config window_shadow                float
 yabai -m config window_opacity               on
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.9
-yabai -m config window_opacity_duration      500
+# doesn't work on MacOS
+# yabai -m config window_opacity_duration      .5
 
 # window borders
-# yabai -m config window_border                on
+yabai -m config window_border                off
 # yabai -m config window_border_width          5
 # yabai -m config active_window_border_color   0xff3d090d
 # yabai -m config normal_window_border_color   0xff3d3839
@@ -49,11 +50,11 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  25
+yabai -m config top_padding                  35
 yabai -m config bottom_padding               25
 yabai -m config left_padding                 25
-yabai -m config right_padding                25
-yabai -m config window_gap                   25
+yabai -m config right_padding                50
+yabai -m config window_gap                   35
 
 # mission-control desktop labels
 # yabai -m space 1 --label code
@@ -72,10 +73,17 @@ yabai -m config --space 1  layout            float
 # app specific rules
 # don't manage these apps
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Install.*" sticky=off layer=normal manage=off
+yabai -m rule --add app="^Trader Workstation$" sticky=off layer=normal manage=off
+yabai -m rule --add app="^OnScreen Control$" sticky=off layer=normal manage=off
+yabai -m rule --add app="^Music$" sticky=on layer=normal manage=off
+yabai -m rule --add app="^PyCharm$" sticky=off layer=normal manage=off
+yabai -m rule --add app="^Installer$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Numi$" sticky=off layer=above manage=off
-yabai -m rule --add app="^Preview$" sticky=off layer=above manage=off
+yabai -m rule --add app="^Preview$" sticky=off layer=normal manage=off
 yabai -m rule --add app="System Preferences" sticky=off layer=normal manage=off
 yabai -m rule --add app="^Spectacle$" manage=off
+
 
 # yabai -m rule --add app="^Mail$" space=mail
 # yabai -m rule --add app="^Safari$" space=web

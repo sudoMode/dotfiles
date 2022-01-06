@@ -1,0 +1,8 @@
+
+TWS API: Unable to fetch closing auctions for Future Contracts
+
+- I'm trying to extract minute data for Japanese Future Contracts (NIKKEI & TOPIX) using the method called "reqHistoricalData" in class "EClient", this method by default does not give closing auction prices or volume i.e. 06:00 & 15:15 JST.
+- To get closing auction data, I invoke "reqHistoricalTicks" method, all ticks within a specific period of time.
+    - Number of ticks is not consistent, it often exceeds the the value specified in "numberOfTicks" parameter.
+    - Not able to get tick data for both closing auctions(evening & morning session), tick data is being served for the morning session only(15:15).
+    - Volume received using this method is twice the actual volume that we get from exchange data.
