@@ -222,5 +222,5 @@ command! Tags !ctags -R .
 command! SpecialKeys digraphs
 
 " Source plugin initializer
-source ~/.vim/plugins/.init.vim
+source ~/.config/vim/plugins/.init.vim
 " ******************************************* "
